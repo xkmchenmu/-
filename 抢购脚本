@@ -1,0 +1,16 @@
+var getThread = null;
+var timeInterval = 20;
+var getCount = 0;
+
+if (!getThread) {
+    getThread = setInterval(() => {
+        if ($("button[hotrep='qcact.campus.getVoucherBtn']")[0].disabled) {
+            $("button[hotrep='qcact.campus.getVoucherBtn']").attr("disabled",false);
+        }
+        $("button[hotrep='qcact.campus.getVoucherBtn']").click();
+        if ($(".J-close")) {
+            $(".J-close").click();
+        }
+        console.log("Already Tried: " + (++getCount) + " Times.");
+    }, timeInterval);
+}
